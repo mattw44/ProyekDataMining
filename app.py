@@ -8,7 +8,7 @@ st.title("Selamat datang pada di aplikasi Pengukur Tingkat Stres Mahasiswa")
 st.write("Aplikasi ini dibuat untuk mengukur tingkat stres mahasiswa berdasarkan gaya hidup.")
 
 #Load Dataset
-df = pd.read_csv("model/Data Student lifestyle.csv,sep=';'")
+df = pd.read_csv("model/Data Student lifestyle.csv", sep=';')
 st.success("Data berhasil dimuat.")
 
 # Menampilkan dataframe
