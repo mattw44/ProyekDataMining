@@ -13,3 +13,6 @@ df = pd.read_csv("model/Data Student lifestyle.csv", sep=';')
 # Menampilkan dataframe
 st.subheader("📂 Data Gaya Hidup Mahasiswa")
 st.dataframe(df, use_container_width=True)
+
+st.subheader("📌 Jumlah Data Berdasarkan Tingkat Stres")
+kelas_counts = df['Tingkat Stres'].value_counts()
