@@ -15,7 +15,4 @@ st.subheader("📂 Data Gaya Hidup Mahasiswa")
 st.dataframe(df, use_container_width=True)
 
 st.subheader("📌 Jumlah Data Berdasarkan Tingkat Stres")
-kelas_counts = df['Tingkat Stres'].value_counts()
-for label, jumlah in kelas_counts.items():
-st.write(f"- **{label}**: {jumlah} data")
-st.table(kelas_counts.reset_index().rename(columns={'index': 'Tingkat Stres', 'Tingkat Stres': 'Jumlah'}))
+kelas_counts = df['Stress_Level'].value_counts()
