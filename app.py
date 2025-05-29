@@ -16,3 +16,11 @@ st.dataframe(df, use_container_width=True)
 
 st.write(df.columns.tolist())
 kelas_counts = df['Stress_Level'].value_counts()
+
+st.subheader("📊 Grafik Batang")
+fig, ax = plt.subplots()
+kelas_counts.plot(kind='bar', color=['skyblue', 'orange', 'lightgreen'], ax=ax)
+ax.set_xlabel("Tingkat Stres")
+ax.set_ylabel("Jumlah")
+ax.set_title("Distribusi Tingkat Stres Mahasiswa")
+st.pyplot(fig)
