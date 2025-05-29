@@ -7,3 +7,4 @@ st.sidebar.header("Main Menu")
 
 st.title("APPLIKASI MENGUKUR TINGKAT STRES")
 st.image ("https://dinkes.bandaacehkota.go.id/wp-content/uploads/sites/36/2025/02/stress.png")
+st.write ("Oleh Kelompok 16")
