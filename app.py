@@ -15,4 +15,7 @@ st.subheader("📂 Data Gaya Hidup Mahasiswa")
 st.dataframe(df, use_container_width=True)
 
 st.subheader("📌 Jumlah Data Berdasarkan Tingkat Stres")
+st.write(df.columns.tolist())
+#df[target] = data target
+#df['label'] = df['Stess_Level'].map({0:'High', 1:'Moderate', 2:'Low'})
 kelas_counts = df['Stress_Level'].value_counts()
