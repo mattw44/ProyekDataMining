@@ -13,3 +13,8 @@ df=pd.read_csv("model/Data Student lifestyle.csv")
 #Tampilan Data Frame
 st.subheader("Dataset Tingkat Stres Mahasiswa")
 st.dataframe(df)
+
+st.writer(df.columns.tolist())
+#df[target] = data target
+#df['label'] = df['Stress_Level'].map({0:'High', 1:'Moderate', 2:'Low'})
+class_counts = df['Stress_Level'].value_counts()
