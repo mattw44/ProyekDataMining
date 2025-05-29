@@ -22,7 +22,7 @@ s3hpd = st.number_input("Social_Hours_Per_Day", min_value=0.0, max_value=10.0, v
 pahpd = st.number_input("Physical_Activity_Hours_Per_Day", min_value=0.0, max_value=10.0, value=2.0)
 grades = st.number_input("Grades", min_value=0.0, max_value=13.0, value=2.0)
 
-if st.button("Prediksi"):  # tambahkan tanda titik dua ':'
+if st.button("Prediksi"):  
     input_data = pd.DataFrame(
         [[shpd, ehpd, s2hpd, s3hpd, pahpd, grades]],
         columns=[
@@ -34,5 +34,5 @@ if st.button("Prediksi"):  # tambahkan tanda titik dua ':'
             "Grades"
         ]
     )
-hasil = model.predict(input_data)
-st.success(f"Hasil Prediksi: {hasil[0]}")
+    hasil = model.predict(input_data)
+    st.success(f"Hasil Prediksi: {hasil[0]}")
