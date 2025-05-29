@@ -13,7 +13,7 @@ def load_model(path):
     model = joblib.load(path)
     return model
 
-model = load_model('model/decision_tree_model.pkl')
+model = load_model('model/decision_tree_model.joblib')
 
 shpd = st.number_input("Study_Hours_Per_Day", min_value=0.0, max_value=10.0, value=2.0)  # hapus tanda " setelah angka default
 ehpd = st.number_input("Extracurricular_Hours_Per_Day", min_value=0.0, max_value=10.0, value=2.0)
