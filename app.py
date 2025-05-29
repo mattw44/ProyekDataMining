@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-from IPython.display import Image
 
 st.set_page_config(page_title="Aplikasi Tingkat Stres", layout="centered")
 st.sidebar.header("Main Menu")
