@@ -34,5 +34,7 @@ if st.button("Prediksi"):  # tambahkan tanda titik dua ':'
             "Grades"
         ]
     )
-    hasil = model.predict(input_data)
-    st.success(f"Hasil Prediksi: {hasil[0]}")
+label_map = {0: "Low", 1: "Moderate", 2: "High"}
+hasil = model.predict(input_data)
+label_hasil = label_map[hasil[0]]
+st.success(f"Hasil Prediksi: {label_hasil}")
