@@ -8,6 +8,4 @@ st.sidebar.header("Main Menu")
 st.title("Kabeh Berhak Bahagia")
 st.title("You with person anyarmu")
 st.title("awakku mbek mie ayam langananku")
-url = "https://inet.detik.com/fotoinet/d-7901589/kala-dennis-teman-adit-sopo-jarwo-jadi-definisi-beban-sesungguhnya"
-Image(url=url)
-st.subheader("#atospearson#maturnuwunGOD")
+st.image ("https://www.kompasiana.com/image/frankyosia3739/6462155c5479c3116347ee82/maraknya-meme-lgbt-di-sosial-media-yang-dapat-merusak-bangsa?page=1", caption="#atospearson#maturnuwunGOD", use_column_width=True)
