@@ -25,3 +25,17 @@ ax.set_xlabel("Tingkat Stres")
 ax.set_ylabel("Jumlah")
 ax.set_title("Distribusi Tingkat Stres Mahasiswa")
 st.pyplot(fig)
+
+st.subheader("📈 Grafik Lingkaran (Pie Chart)")
+fig, ax = plt.subplots()
+colors = ['#66b3ff', '#ffcc99', '#99ff99']  # warna untuk tiap kelas
+ax.pie(
+    kelas_counts,
+    labels=kelas_counts.index,
+    autopct='%1.1f%%',
+    startangle=90,
+    colors=colors,
+    textprops={'fontsize': 12}
+)
+ax.axis('equal')  # memastikan bentuk lingkaran
+st.pyplot(fig)
