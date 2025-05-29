@@ -5,3 +5,6 @@ st.sidebar.header("Main Menu")
 
 st.title("Selamat datang pada di aplikasi Pengukur Tingkat Stres Mahasiswa")
 st.write("Aplikasi ini dibuat untuk mengukur tingkat stres mahasiswa berdasarkan gaya hidup.")
+
+#Load Dataset
+df.pd.read_csv(
