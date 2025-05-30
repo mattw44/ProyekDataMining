@@ -39,13 +39,10 @@ if st.button("Hasil"):
 
         report = classification_report(y_test, y_pred, output_dict=True)
         report_df = pd.DataFrame(report).transpose()
-
-        st.success("✅ Hasil Evaluasi Model")
-        # Mengatur tampilan dalam dua baris (4 kolom)
+        st.success("Hasil Evaluasi Model")
         a, b = st.columns(2)
         c, d = st.columns(2)
-        # Menampilkan metrik
-        a.metric("🎯 Akurasi", f"{accuracy:.1f}%", border=True)
-        b.metric("📏 Presisi", f"{precision:.1f}%", border=True)
-        c.metric("📡 Recall", f"{recall:.1f}%", border=True)
-        d.metric("📊 F1-Score", f"{f1:.1f}%", border=True)
+        a.metric("Akurasi", f"{accuracy:.1f}%", border=True)
+        b.metric("Presisi", f"{precision:.1f}%", border=True)
+        c.metric("Recall", f"{recall:.1f}%", border=True)
+        d.metric("F1-Score", f"{f1:.1f}", border=True)
