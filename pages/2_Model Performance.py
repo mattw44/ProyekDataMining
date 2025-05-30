@@ -16,8 +16,8 @@ testing = st.slider("Data Testing", min_value=10, max_value=90, value=20)
 st.write(f"Nilai yang dipilih: {testing}")
 t_size = testing/100
 
-X = df.drop('Stress_Level', axis=1)
-y = df['Stress_Level']
+X = dataset.drop('Stress_Level', axis=1)
+y = dataset['Stress_Level']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=t_size, random_state=42)
 
