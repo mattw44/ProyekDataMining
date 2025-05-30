@@ -41,14 +41,12 @@ if st.button("Hasil"):
         report_df = pd.DataFrame(report).transpose()
 
         st.success("Hasil Evaluasi Model")
-        st.write("### Akurasi")
-        st.write(f"{accuracy:.1f}%")
-        st.write("### Presisi")
-        st.write(f"{precision:.1f}%")
-        st.write("### Recall")
-        st.write(f"{recall:.1f}%")
-        st.write("### F1-Score")
-        st.write(f"{f1:.1f}%")
+        a, b = st.columns(2)
+        c, d = st.columns(2)
+        a.metric("Akurasi", "{accuracy:.1f}%", border=True)
+        b.metric("Presisi", "{precision:.1f}%", border=True)
+        c.metric("Recall", "{recall:.1f}%", border=True)
+        d.metric("F1-Score", "{f1:.1f}", border=True)
 
     except Exception as e:
         st.error(f"Terjadi kesalahan saat evaluasi model: {e}")
