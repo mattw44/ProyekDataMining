@@ -27,10 +27,10 @@ def load_model(path):
     return model
 
 model = load_model('model/decision_tree_model.pkl')
+model = load_model(model_path)
 
-if st.button("Hasil"):  
+if st.button("Hasil"):
     try:
-        model = load_model(model_path)
         y_pred = model.predict(X_test)
 
         acc = accuracy_score(y_test, y_pred)
@@ -41,3 +41,6 @@ if st.button("Hasil"):
         st.write(f"**Akurasi:** {acc:.2f}")
         st.write("**Classification Report:**")
         st.dataframe(report_df)
+        
+    except Exception as e:
+        st.error(f"Terjadi kesalahan saat evaluasi model: {e}")
