@@ -50,8 +50,5 @@ if st.button("Hasil"):
         st.write("### F1-Score")
         st.write(f"{f1:.1f}%")
 
-        st.write("### Classification Report")
-        st.dataframe(report_df)
-
     except Exception as e:
         st.error(f"Terjadi kesalahan saat evaluasi model: {e}")
