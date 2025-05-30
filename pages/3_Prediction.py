@@ -37,5 +37,5 @@ if st.button("Prediksi"):
         ]
     )
     hasil = model.predict(input_data)
-    st.success(f"Halo, {nama}, tingkat stess kamu adalah {hasil[0]}")
+    st.success(f"Halo Kak {nama}, tingkat stess kamu adalah {hasil[0]}")
     st.success(f"Semoga harimu menyenangkan")
