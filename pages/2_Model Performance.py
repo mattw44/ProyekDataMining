@@ -25,3 +25,21 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=t_size, rand
 def load_model(path):
     model = joblib.load(path)
     return model
+
+if st.button("Hasil"):  
+    try:
+        model = load_model(model_path)
+        y_pred = model.predict(X_test)
+
+        acc = accuracy_score(y_test, y_pred)
+        report = classification_report(y_test, y_pred, output_dict=True)
+        report_df = pd.DataFrame(report).transpose()
+
+        st.subheader("Hasil Evaluasi Model")
+        st.write(f"**Akurasi:** {acc:.2f}")
+        st.write("**Classification Report:**")
+        st.dataframe(report_df)
+
+    hasil = model.predict(input_data)
+    st.success(f"Halo Kak {nama}, tingkat stess kamu adalah {hasil[0]}")
+    st.success(f"Semoga harimu menyenangkan")
