@@ -32,10 +32,11 @@ if st.button("Hasil"):
     try:
         y_pred = model.predict(X_test)
 
-        accuracy = accuracy_score(y_true, y_pred) * 100
-        precision = precision_score(y_true, y_pred) * 100
-        recall = recall_score(y_true, y_pred) * 100
-        f1 = f1_score(y_true, y_pred) * 100
+        accuracy = accuracy_score(y_test, y_pred) * 100
+        precision = precision_score(y_test, y_pred, average='weighted') * 100
+        recall = recall_score(y_test, y_pred, average='weighted') * 100
+        f1 = f1_score(y_test, y_pred, average='weighted') * 100
+
         report = classification_report(y_test, y_pred, output_dict=True)
         report_df = pd.DataFrame(report).transpose()
 
@@ -48,3 +49,9 @@ if st.button("Hasil"):
         st.write(f"{recall:.1f}%")
         st.write("### F1-Score")
         st.write(f"{f1:.1f}%")
+
+        st.write("### Classification Report")
+        st.dataframe(report_df)
+
+    except Exception as e:
+        st.error(f"Terjadi kesalahan saat evaluasi model: {e}")
