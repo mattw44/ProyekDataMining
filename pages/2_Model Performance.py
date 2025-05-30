@@ -47,10 +47,10 @@ if st.button("Hasil"):
         st.success("✅ Hasil Evaluasi Model")
         a, b = st.columns(2)
         c, d = st.columns(2)
-        a.metric("🎯 Akurasi", f"{accuracy:.1f}%")
-        b.metric("📏 Presisi", f"{precision:.1f}%")
-        c.metric("📡 Recall", f"{recall:.1f}%")
-        d.metric("📊 F1-Score", f"{f1:.1f}%")
+        a.metric("🎯 Akurasi", f"{accuracy:.1f}%", border=True)
+        b.metric("📏 Presisi", f"{precision:.1f}%", border=True)
+        c.metric("📡 Recall", f"{recall:.1f}%", border=True)
+        d.metric("📊 F1-Score", f"{f1:.1f}%", border=True)
 
         with st.expander("🔍 Lihat Classification Report Lengkap"):
             st.dataframe(report_df)
