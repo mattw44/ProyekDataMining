@@ -44,7 +44,7 @@ if st.button("Hasil"):
         report_df = pd.DataFrame(report).transpose()
 
         # Tampilan hasil
-        st.success("✅ Hasil Evaluasi Model")
+        st.success("✅ Hasil Evaluasi Decision Tree Classifier")
         a, b = st.columns(2)
         c, d = st.columns(2)
         a.metric("🎯 Akurasi", f"{accuracy:.1f}%", border=True)
