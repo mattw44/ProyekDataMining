@@ -27,7 +27,6 @@ def load_model(path):
     return model
 
 model = load_model('model/decision_tree_model.pkl')
-model = load_model(model_path)
 
 if st.button("Hasil"):
     try:
