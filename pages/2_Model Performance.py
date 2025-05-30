@@ -32,14 +32,19 @@ if st.button("Hasil"):
     try:
         y_pred = model.predict(X_test)
 
-        acc = accuracy_score(y_test, y_pred)
+        accuracy = accuracy_score(y_true, y_pred) * 100
+        precision = precision_score(y_true, y_pred) * 100
+        recall = recall_score(y_true, y_pred) * 100
+        f1 = f1_score(y_true, y_pred) * 100
         report = classification_report(y_test, y_pred, output_dict=True)
         report_df = pd.DataFrame(report).transpose()
 
         st.subheader("Hasil Evaluasi Model")
-        st.write(f"**Akurasi:** {acc:.2f}")
-        st.write("**Classification Report:**")
-        st.dataframe(report_df)
-        
-    except Exception as e:
-        st.error(f"Terjadi kesalahan saat evaluasi model: {e}")
+        st.write("### Akurasi")
+        st.write(f"{accuracy:.1f}%")
+        st.write("### Presisi")
+        st.write(f"{precision:.1f}%")
+        st.write("### Recall")
+        st.write(f"{recall:.1f}%")
+        st.write("### F1-Score")
+        st.write(f"{f1:.1f}%")
