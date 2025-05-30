@@ -16,6 +16,7 @@ def load_model(path):
 
 model = load_model('model/decision_tree_model.pkl')
 
+nama = st.text_input("Masukkan nama Anda:")
 shpd = st.slider("Study_Hours_Per_Day", min_value=0.0, max_value=10.0, value=2.0)  # hapus tanda " setelah angka default
 ehpd = st.slider("Extracurricular_Hours_Per_Day", min_value=0.0, max_value=10.0, value=2.0)
 s2hpd = st.slider("Sleep_Hours_Per_Day", min_value=0.0, max_value=10.0, value=2.0)
@@ -36,4 +37,5 @@ if st.button("Prediksi"):
         ]
     )
     hasil = model.predict(input_data)
-    st.success(f"Hasil Prediksi: {hasil[0]}")
+    st.success(f"Halo, {nama}, tingkat stess kamu adalah {hasil[0]}")
+    st.success(f"Semoga harimu menyenangkan")
