@@ -40,7 +40,7 @@ if st.button("Hasil"):
         report = classification_report(y_test, y_pred, output_dict=True)
         report_df = pd.DataFrame(report).transpose()
 
-        st.subheader("Hasil Evaluasi Model")
+        st.success("Hasil Evaluasi Model")
         st.write("### Akurasi")
         st.write(f"{accuracy:.1f}%")
         st.write("### Presisi")
