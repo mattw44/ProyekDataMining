@@ -36,13 +36,17 @@ if st.button("Hasil"):
         precision = precision_score(y_test, y_pred, average='weighted') * 100
         recall = recall_score(y_test, y_pred, average='weighted') * 100
         f1 = f1_score(y_test, y_pred, average='weighted') * 100
-
-        report = classification_report(y_test, y_pred, output_dict=True)
-        report_df = pd.DataFrame(report).transpose()
-        st.success("Hasil Evaluasi Model")
+        
+        st.success("✅ Hasil Evaluasi Model")
         a, b = st.columns(2)
         c, d = st.columns(2)
-        a.metric("Akurasi", f"{accuracy:.1f}%", border=True)
-        b.metric("Presisi", f"{precision:.1f}%", border=True)
-        c.metric("Recall", f"{recall:.1f}%", border=True)
-        d.metric("F1-Score", f"{f1:.1f}", border=True)
+        a.metric("🎯 Akurasi", f"{accuracy:.1f}%")
+        b.metric("📏 Presisi", f"{precision:.1f}%")
+        c.metric("📡 Recall", f"{recall:.1f}%")
+        d.metric("📊 F1-Score", f"{f1:.1f}%")
+
+        with st.expander("🔍 Lihat Classification Report Lengkap"):
+            st.dataframe(report_df)
+
+    except Exception as e:
+        st.error(f"Terjadi kesalahan saat evaluasi model: {e}")
