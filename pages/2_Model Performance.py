@@ -26,6 +26,8 @@ def load_model(path):
     model = joblib.load(path)
     return model
 
+model = load_model('model/decision_tree_model.pkl')
+
 if st.button("Hasil"):  
     try:
         model = load_model(model_path)
