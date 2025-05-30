@@ -10,7 +10,7 @@ st.sidebar.header("Model Performance")
 st.title("Model Performa")
 st.write("Pilih model performa yang kalian inginkan")
 
-df = pd.read_csv('model/Data Student lifestyle.csv')
+df = pd.read_csv("model/Data Student lifestyle.csv", sep=';')
 
 testing = st.slider("Data Testing", min_value=10, max_value=90, value=20)
 st.write(f"Nilai yang dipilih: {testing}")
