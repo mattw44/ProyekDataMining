@@ -41,7 +41,3 @@ if st.button("Hasil"):
         st.write(f"**Akurasi:** {acc:.2f}")
         st.write("**Classification Report:**")
         st.dataframe(report_df)
-
-    hasil = model.predict(input_data)
-    st.success(f"Halo Kak {nama}, tingkat stess kamu adalah {hasil[0]}")
-    st.success(f"Semoga harimu menyenangkan")
