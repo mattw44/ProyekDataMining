@@ -30,13 +30,20 @@ model = load_model('model/decision_tree_model.pkl')
 
 if st.button("Hasil"):
     try:
+        # Prediksi
         y_pred = model.predict(X_test)
 
+        # Evaluasi
         accuracy = accuracy_score(y_test, y_pred) * 100
         precision = precision_score(y_test, y_pred, average='weighted') * 100
         recall = recall_score(y_test, y_pred, average='weighted') * 100
         f1 = f1_score(y_test, y_pred, average='weighted') * 100
-        
+
+        # Classification report
+        report = classification_report(y_test, y_pred, output_dict=True)
+        report_df = pd.DataFrame(report).transpose()
+
+        # Tampilan hasil
         st.success("✅ Hasil Evaluasi Model")
         a, b = st.columns(2)
         c, d = st.columns(2)
