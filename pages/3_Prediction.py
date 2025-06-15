@@ -50,14 +50,14 @@ if st.button("Prediksi"):
         - Luangkan waktu untuk relaksasi dan kegiatan yang menyenangkan.
         - Pertimbangkan berbicara dengan konselor atau orang terpercaya.
         """)
-    elif hasil.lower() == 'moderate':
+    elif hasil == 'moderate':
         st.warning("😐 Rekomendasi untuk Tingkat Stres Sedang:")
         st.markdown("""
         - Pertahankan keseimbangan antara aktivitas belajar dan hiburan.
         - Tetap jaga pola tidur dan gaya hidup sehat.
         - Coba teknik manajemen stres ringan seperti journaling atau olahraga ringan.
         """)
-    elif hasil.lower() == 'low':
+    elif hasil == 'low':
         st.success("😄 Rekomendasi untuk Tingkat Stres Rendah:")
         st.markdown("""
         - Pertahankan gaya hidup seimbang dan kebiasaan positifmu!
