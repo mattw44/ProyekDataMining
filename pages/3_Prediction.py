@@ -42,7 +42,7 @@ if st.button("Prediksi"):
     hasil = model.predict(input_data)
     st.success(f"Halo Kak {nama}, tingkat stess kamu adalah {hasil[0]}")
         # Rekomendasi berdasarkan hasil
-    if hasil.lower() == 'high':
+    if hasil == 'high':
         st.error("😟 Rekomendasi untuk Tingkat Stres Tinggi:")
         st.markdown("""
         - Kurangi beban akademik berlebihan dan atur waktu belajar.
