@@ -42,7 +42,7 @@ if st.button("Prediksi"):
     hasil = model.predict(input_data)
     st.success(f"Halo Kak {nama}, tingkat stess kamu adalah {hasil[0]}")
         # Rekomendasi berdasarkan hasil
-    if prediksi.lower() == 'high':
+    if hasil.lower() == 'high':
         st.error("😟 Rekomendasi untuk Tingkat Stres Tinggi:")
         st.markdown("""
         - Kurangi beban akademik berlebihan dan atur waktu belajar.
@@ -50,14 +50,14 @@ if st.button("Prediksi"):
         - Luangkan waktu untuk relaksasi dan kegiatan yang menyenangkan.
         - Pertimbangkan berbicara dengan konselor atau orang terpercaya.
         """)
-    elif prediksi.lower() == 'moderate':
+    elif hasil.lower() == 'moderate':
         st.warning("😐 Rekomendasi untuk Tingkat Stres Sedang:")
         st.markdown("""
         - Pertahankan keseimbangan antara aktivitas belajar dan hiburan.
         - Tetap jaga pola tidur dan gaya hidup sehat.
         - Coba teknik manajemen stres ringan seperti journaling atau olahraga ringan.
         """)
-    elif prediksi.lower() == 'low':
+    elif hasil.lower() == 'low':
         st.success("😄 Rekomendasi untuk Tingkat Stres Rendah:")
         st.markdown("""
         - Pertahankan gaya hidup seimbang dan kebiasaan positifmu!
