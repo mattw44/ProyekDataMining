@@ -26,10 +26,9 @@ s3hpd = st.slider("Social_Hours_Per_Day", min_value=0.0, max_value=10.0, value=2
 pahpd = st.slider("Physical_Activity_Hours_Per_Day", min_value=0.0, max_value=10.0, value=2.0)
 grades = st.slider("Grades", min_value=0.0, max_value=10.0, value=2.0)
 
-#Menampilkan hasil prediksi 
-if st.button("Prediksi"):  
-    input_data = pd.DataFrame(
-        [[shpd, ehpd, s2hpd, s3hpd, pahpd, grades]],
+# Prediksi
+if st.button("Prediksi"):
+    input_data = pd.DataFrame([[shpd, ehpd, s2hpd, s3hpd, pahpd, grades]],
         columns=[
             "Study_Hours_Per_Day",
             "Extracurricular_Hours_Per_Day",
@@ -37,12 +36,19 @@ if st.button("Prediksi"):
             "Social_Hours_Per_Day",
             "Physical_Activity_Hours_Per_Day",
             "Grades"
-        ]
-    )
-    hasil = model.predict(input_data)
-    st.success(f"Halo Kak {nama}, tingkat stess kamu adalah {hasil[0]}")
-        # Rekomendasi berdasarkan hasil
-    if hasil == 'high':
+        ])
+    
+    hasil = model.predict(input_data)  # Contoh: array([2])
+
+    # Mapping hasil numerik ke label teks
+    label_mapping = {0: 'low', 1: 'moderate', 2: 'high'}
+    prediksi = label_mapping[hasil[0]]
+
+    # Tampilkan hasil
+    st.success(f"Halo Kak **{nama}**, tingkat stres kamu adalah **{prediksi.capitalize()}**")
+
+    # Rekomendasi
+    if prediksi == 'high':
         st.error("😟 Rekomendasi untuk Tingkat Stres Tinggi:")
         st.markdown("""
         - Kurangi beban akademik berlebihan dan atur waktu belajar.
@@ -50,14 +56,14 @@ if st.button("Prediksi"):
         - Luangkan waktu untuk relaksasi dan kegiatan yang menyenangkan.
         - Pertimbangkan berbicara dengan konselor atau orang terpercaya.
         """)
-    elif hasil == 'moderate':
+    elif prediksi == 'moderate':
         st.warning("😐 Rekomendasi untuk Tingkat Stres Sedang:")
         st.markdown("""
         - Pertahankan keseimbangan antara aktivitas belajar dan hiburan.
         - Tetap jaga pola tidur dan gaya hidup sehat.
         - Coba teknik manajemen stres ringan seperti journaling atau olahraga ringan.
         """)
-    elif hasil == 'low':
+    elif prediksi == 'low':
         st.success("😄 Rekomendasi untuk Tingkat Stres Rendah:")
         st.markdown("""
         - Pertahankan gaya hidup seimbang dan kebiasaan positifmu!
