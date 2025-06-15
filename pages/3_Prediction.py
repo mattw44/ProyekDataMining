@@ -20,9 +20,9 @@ model = load_model('model/decision_tree_model.pkl')
 #Mendefinisikan variabel input
 nama = st.text_input("Masukkan nama Anda:")
 shpd = st.slider("Study Hours Per Day", min_value=0.0, max_value=10.0, value=2.0)  # hapus tanda " setelah angka default
-ehpd = st.slider("Extracurricular Hours Per Day", min_value=0.0, max_value=10.0, value=2.0)
+ehpd = st.slider("Extracurricular Hours Per Day", min_value=0.0, max_value=4.0, value=2.0)
 s2hpd = st.slider("Sleep Hours Per Day", min_value=0.0, max_value=10.0, value=2.0)
-s3hpd = st.slider("Social Hours Per Day", min_value=0.0, max_value=10.0, value=2.0)
+s3hpd = st.slider("Social Hours Per Day", min_value=0.0, max_value=6.0, value=2.0)
 pahpd = st.slider("Physical Activity Hours Per Day", min_value=0.0, max_value=13.0, value=2.0)
 grades = st.slider("Grades (IPK*2,5)", min_value=0.0, max_value=10.0, value=2.0)
 
