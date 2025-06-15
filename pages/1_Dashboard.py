@@ -19,7 +19,7 @@ st.write(df.columns.tolist())
 kelas_counts = df['Stress_Level'].value_counts()
 
 #Menampilkan Statistika Deskripsi
-st.subheader("Statistik Deskriptif")
+st.subheader("📈 Statistik Deskriptif")
 st.dataframe(df.describe())
 
 #Menampilkan Grafik Batang
