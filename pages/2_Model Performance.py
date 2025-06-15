@@ -8,12 +8,12 @@ st.set_page_config(page_title="Aplikasi Tingkat Stres", layout="centered")
 st.sidebar.header("Model Performance")
 
 st.title("Model Performa")
-st.write("Pilih model performa yang kalian inginkan")
+st.write("Pilih banyak data yang kalian inginkan")
 
 #Memanggil model yang akan digunakan
 df = pd.read_csv("model/Data Student lifestyle.csv", sep=';')
 
-testing = st.slider("Data Testing", min_value=10, max_value=90, value=20)
+testing = st.slider("Data Testing (%)", min_value=10, max_value=90, value=20)
 st.write(f"Nilai yang dipilih: {testing}")
 t_size = testing/100
 
