@@ -20,7 +20,7 @@ kelas_counts = df['Stress_Level'].value_counts()
 
 #Menampilkan Statistika Deskripsi
 st.subheader("Statistik Deskriptif")
-st.dataframe(data.describe())
+st.dataframe(df.describe())
 
 #Menampilkan Grafik Batang
 st.subheader("📊 Grafik Batang")
